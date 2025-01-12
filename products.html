@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Products - WARFORGE</title>
+</head>
+<body>
+    <header>
+        <div class="logo">WARFORGE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="product-container">
+        <div class="product">
+            <img src="beretta.jpg" alt="beretta m9">
+            <h2>Beretta M9</h2>
+            <p>he M9 pistol is the current service pistol for the United States military.</p>
+            <p>Price: ₹49,900.</p>
+            <button class="add-to-cart" onclick="addToCart('Beretta M9', 49900)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="Glock17.jpg" alt="Weapon 2">
+            <h2>Glock 17</h2>
+            <p>A lightweight semi-automatic 9mm handgun.</p>
+            <p>Price: ₹49,900.</p>
+            <button class="add-to-cart" onclick="addToCart('Glock17', 49900)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="M16A4.jpg" alt="Weapon 3">
+            <h2>M16A4</h2>
+            <p>The current main combat rifle (MCR) for the U.S. military</p>
+            <p>Price: ₹80,941.</p>
+            <button class="add-to-cart" onclick="addToCart('M16A4', 80941)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="ak47.jpg" alt="Weapon 4">
+            <h2>AK-47</h2>
+            <p>A Russian assault rifle with incredible reliability and ruggedness</p>
+            <p>Price: ₹94,816.</p>
+            <button class="add-to-cart" onclick="addToCart('AK-47', 94816)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="M4.jpg" alt="Weapon ">
+            <h2>M16</h2>
+            <p> The most popular rifles sold today and fire the potent yet controllable 5.56mm round.</p>
+            <p>Price: ₹600000.</p>
+            <button class="add-to-cart" onclick="addToCart('M16', 6000000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="auto.jpg" alt="Weapon 5">
+            <h2>Auto Shotgun</h2>
+            <p>Shotguns that can fire semi or fully automatically</p>
+            <p>Price: ₹120000.</p>
+            <button class="add-to-cart" onclick="addToCart('Auto Shotgun', 120000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="m249.jpg" alt="Weapon ">
+            <h2>M249 SAW</h2>
+            <p> The M249 SAW is the US Military's primary man-portable light machine gun.</p>
+            <p>Price: ₹1000000.</p>
+            <button class="add-to-cart" onclick="addToCart('M249 SAW', 1000000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="mp20.jpg" alt="Weapon ">
+            <h2>MP40</h2>
+            <p> German submachine gun frequently used during WWII.</p>
+            <p>Price: ₹80000.</p>
+            <button class="add-to-cart" onclick="addToCart('MP40', 80000)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="awm.jpg" alt="Weapon 6">
+            <h2>AW50 Sniper Rifle</h2>
+            <p>AW50 Sniper Rifle is the .50 caliber variant of Accuracy</p>
+            <p>Price: ₹14,99,640</p>
+            <button class="add-to-cart" onclick="addToCart('AW50 Sniper Rifle', 1499640)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="geanade.jpg" alt="Weapon 7">
+            <h2>Mk 2 Grenade</h2>
+            <p>A fragmentation hand grenade</p>
+            <p>Price: ₹8,619.</p>
+            <button class="add-to-cart" onclick="addToCart('Mk 2 Grenade', 8619)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="smoke.jpg" alt="Weapon 8">
+            <h2>Smoke Grenade</h2>
+            <p>Canister type grenades used to obscure the enemy's view of the advance or retreat of friendly troops</p>
+            <p>Price: ₹6000.</p>
+            <button class="add-to-cart" onclick="addToCart('Smoke Grenade', 6000)">Add to Cart</button>
+        </div>
+        
+        </div>
+    </div>
+    <script>
+        function addToCart(name, price) {
+            // Get existing cart items from local storage or initialize an empty array
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            // Add the selected item to the cart
+            cart.push({ name: name, price: price });
+            // Save the updated cart back to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + ' has been added to your cart!');
+        }
+    </script>
+</body>
+</html>
+

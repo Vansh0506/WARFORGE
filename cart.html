@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cart - WARFORGE</title>
+</head>
+<body>
+    <header>
+        <div class="logo">WARFORGE</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+   <main>
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <button onclick="clearCart()" class="clear-cart">Clear Cart</button><br>
+   <br><a href="products.html" class="cart-link">Continue Shopping</a>
+</main>
+<script>
+    function displayCart() {
+        // Get cart items from local storage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cartItemsDiv = document.getElementById('cart-items');
+        cartItemsDiv.innerHTML = ''; // Clear previous items
+
+        if (cart.length === 0) {
+            cartItemsDiv.innerHTML = '<p>No items in the cart.</p>';
+        } else {
+            cart.forEach(item => {
+                cartItemsDiv.innerHTML += `<p>${item.name} - ₹${item.price}</p>`;
+            });
+        }
+    }
+
+    function clearCart() {
+        // Clear the cart from local storage
+        localStorage.removeItem('cart');
+        displayCart(); // Refresh the displayed cart items
+        alert('Your cart has been cleared!');
+    }
+
+    // Call displayCart function when the page loads
+    window.onload = displayCart;
+</script>
+    <BR><BR><BR><BR><BR><BR><BR></BR></BR></BR></BR></BR></BR></BR></BR></BR></BR></BR></BR></BR><footer>
+        <p>&copy; 2025 WARFORGE</p>
+    </footer>
+</body>
+</html>
